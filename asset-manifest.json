@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6295f530.css",
+    "main.js": "/static/js/main.e52dc01e.js",
+    "static/js/787.741e7d96.chunk.js": "/static/js/787.741e7d96.chunk.js",
+    "static/media/ApexNew-Bold.otf": "/static/media/ApexNew-Bold.65dd2f29109a33907c78.otf",
+    "static/media/ApexNew-Medium.otf": "/static/media/ApexNew-Medium.4f4ef757529ab5d0e258.otf",
+    "static/media/ApexNew-Book.otf": "/static/media/ApexNew-Book.e24911b20875b98c4258.otf",
+    "static/media/logo-talma-blanco.svg": "/static/media/logo-talma-blanco.f03674fe079174c464a0efb825ea418c.svg",
+    "static/media/line.png": "/static/media/line.62e23906e72a3ff947f0.png",
+    "static/media/ojo.svg": "/static/media/ojo.0af3088660285ecec2ecb2137626bc0d.svg",
+    "static/media/subir.svg": "/static/media/subir.ac8b3b69b2eaf74ac2878165ecaff9f8.svg",
+    "index.html": "/index.html",
+    "main.6295f530.css.map": "/static/css/main.6295f530.css.map",
+    "main.e52dc01e.js.map": "/static/js/main.e52dc01e.js.map",
+    "787.741e7d96.chunk.js.map": "/static/js/787.741e7d96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6295f530.css",
+    "static/js/main.e52dc01e.js"
+  ]
+}
