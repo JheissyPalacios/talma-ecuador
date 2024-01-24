@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "username": "usuario1@gmail.com",
+      "telefono": "123-456-7890",
+      "nombre": "Nombre1",
+      "apellido": "Apellido1",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "usuario2@gmail.com",
+      "telefono": "987-654-3210",
+      "nombre": "Nombre2",
+      "apellido": "Apellido2",
+      "password": "12345"
+    }
+  ]
+  

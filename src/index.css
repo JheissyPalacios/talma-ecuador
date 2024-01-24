@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'MiFuente';
+  src: url('./fonts/ApexNew-Book.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('./fonts/ApexNew-Medium.otf') format('opentype');
+  font-weight: 550; /* Peso semibold */
+}
+
+@font-face {
+  font-family: 'MiFuente';
+  src: url('./fonts/ApexNew-Bold.otf') format('opentype');
+  font-weight: 600;
+}
+body {
+  margin: 0;
+  font-family: 'MiFuente', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'MiFuente', sans-serif;
+}
+
