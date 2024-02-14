@@ -21,7 +21,7 @@ export default function Requests() {
     document.body.style.overflow = 'hidden';
     const listSolicitudes = collection(db, "solicitudes");
     console.log(listSolicitudes);
-    const queryRef = query(listSolicitudes, where("user", "==", user.username), where("dbName", "==", "cons"));
+    const queryRef = query(listSolicitudes, where("user", "==", user.username), where("dbName", "==", "cons"), orderBy("dateInit", "desc"));
 
     getDocs(queryRef)
       .then((resp) => {
@@ -175,7 +175,9 @@ export default function Requests() {
                 )}
             </li>
           ))}
-
+        {data.length == 0 &&
+          <p>Aún no hay ninguna solicitud guardada</p>
+        }
 
       </ul>
       

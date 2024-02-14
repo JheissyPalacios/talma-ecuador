@@ -233,8 +233,10 @@ export default function CreateRequest() {
         // Llamar a una función para analizar el contenido del archivo CSV
         parseCSVContent(csvContent, name, file);
       };
-
-      reader.readAsText(file);
+      console.log(file);
+      if (file !== undefined){
+        reader.readAsText(file);
+      }
     } else {
       setFormData({
         ...formularioData,
@@ -331,8 +333,8 @@ export default function CreateRequest() {
       initial_rest_periods: initialFirebase,
       last_shifts: lastFirebase,
       dateInit: fechaHoy,
-      dateFinish: fechaHoy,
       user: user.username,
+      nombre: user.nombre,
       dbName: nameDB,
       state: 3,
       roster: "",
@@ -547,6 +549,8 @@ export default function CreateRequest() {
       formData.append('last_shifts', formularioData.last_shifts);
       formData.append('fecha', fechaHoy);
       formData.append('idDB', idGenerado.toString());
+      formData.append('username', user.username);
+      formData.append('nombre', user.nombre);
       
       try {
         const response = await fetch(
@@ -559,38 +563,14 @@ export default function CreateRequest() {
         );
         
         const data = await response.json();
-        const fechaFinal = obtenerFechaActual();
-        const idRequest = data.mensaje.idDB;
-        const routeRosterCSV = data.mensaje.routeRosterCSV;
-        const datosDeConfirmación = {
-          state: 1, 
-          dateFinish: fechaFinal
-        }
-        const datosDeError = {
-          state: 2, 
-          dateFinish: fechaFinal,
-          error: (response.statusText).toString()
-        }
-        
-        if(response.ok){
-          await actualizarDocumento(db, 'solicitudes', idRequest,  datosDeConfirmación)
-          const rosterCode = await guardarEnArchivoTemporal(routeRosterCSV, idRequest)
-        }
+      
 
         if (!response.ok) {
-          actualizarDocumento(db, 'solicitudes', idGenerado, datosDeError)
           throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
 
       } catch (error) {
-        const fechaFinal = obtenerFechaActual();
-        const datosDeError = {
-          state: 2, 
-          dateFinish: fechaFinal,
-          error: (error).toString()
-        }
-        actualizarDocumento(db, 'solicitudes', idGenerado, datosDeError)
-        console.error("Error al enviar la solicitud:", error);
+        console.error("Error al enviar la solicitud:", error.toString());
       }
     }
   };
@@ -605,7 +585,7 @@ export default function CreateRequest() {
     const minutos = fechaActual.getMinutes() <= 9 ? `0${fechaActual.getMinutes()}` : fechaActual.getMinutes();
     const segundos = fechaActual.getSeconds() <= 9 ? `0${fechaActual.getSeconds()}` : fechaActual.getSeconds();
 
-    const periodo = hora >= 12 ? "pm" : "am";
+    const periodo = hora >= 12 ? "PM" : "AM";
     // Convertir la hora al formato de 12 horas
     hora = (hora % 12 || 12)  <= 9 ? `0${hora % 12 || 12}` : hora % 12 || 12;
     // Formatear la fecha y hora

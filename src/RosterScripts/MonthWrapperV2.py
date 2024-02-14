@@ -45,15 +45,6 @@ def month_rosterV2(Capacity,scores,
         rest_time_hours = rest_time_hours)
     
     
-    print("shift_filter: " + str(shift_filter))
-    print("madrugada: " + str(madrugada))
-    print("dia: " + str(dia))
-    print("tarde: " + str(tarde))
-    print("noche: " + str(noche))
-    print("sinluz: " + str(sinluz))
-    print("rest_time_hours: " + str(rest_time_hours))
-    print("objective: " + str(objective))
-    
     print('Final Stints - Tiempo Transcurrido: ' + str(datetime.now() - initial_time))
     
     for w in range(num_weeks):
