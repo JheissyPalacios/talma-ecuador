@@ -2,7 +2,6 @@
     {
       "id": 1,
       "username": "usuario1@gmail.com",
-      "telefono": "123-456-7890",
       "nombre": "Nombre1",
       "apellido": "Apellido1",
       "password": "12345"
@@ -10,10 +9,64 @@
     {
       "id": 2,
       "username": "usuario2@gmail.com",
-      "telefono": "987-654-3210",
       "nombre": "Nombre2",
       "apellido": "Apellido2",
       "password": "12345"
+    },
+    {
+      "id": 3,
+      "username": "daniel.baquero@talma.com.ec",
+      "nombre": "Daniel",
+      "apellido": "Baquero",
+      "password": "NcA35sJS"
+    },
+    {
+      "id": 4,
+      "username": "jheissyp@gmail.com",
+      "nombre": "Jheissy",
+      "apellido": "Palacios",
+      "password": "12345"
+    },
+    {
+      "id": 4,
+      "username": "deivyp@gmail.com",
+      "nombre": "Gregoris",
+      "apellido": "Pereira",
+      "password": "3410507"
+    },
+    {
+      "id": 5,
+      "username": "juan.lucero@talma.com.ec",
+      "nombre": "Juan",
+      "apellido": "Lucero",
+      "password": "$VpUPhPp"
+    },
+    {
+      "id": 6,
+      "username": "carlos.navarrete@talma.com.ec",
+      "nombre": "Carlos",
+      "apellido": "Navarrete",
+      "password": "MbngEKID"
+    },
+    {
+      "id": 7,
+      "username": "daniel.ochoa@talma.com.ec",
+      "nombre": "Daniel",
+      "apellido": "Ochoa",
+      "password": "V+vTZzD2"
+    },
+    {
+      "id": 8,
+      "username": "edgar.uguna@talma.com.ec",
+      "nombre": "Edgar",
+      "apellido": "Uguna",
+      "password": "+xgcKg!Z"
+    },
+    {
+      "id": 9,
+      "username": "jheissyp@gmail.com",
+      "nombre": "Jheissy",
+      "apellido": "Palacios",
+      "password": "12345"
     }
   ]
-  

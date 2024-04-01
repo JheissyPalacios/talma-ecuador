@@ -558,7 +558,7 @@ export default function CreateRequest() {
           {
             method: "POST",
             body: formData,
-            redirect: 'follow'
+            Navigate: 'follow'
           }
         );
         

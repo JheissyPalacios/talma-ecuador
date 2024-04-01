@@ -1,23 +1,33 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import './App.scss';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import { AppProvider } from './AppProvider';
-function App() {
+
+export default function App() {
   return (
     <AppProvider>
         <BrowserRouter>
-          <Switch>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path="/home"
+              element={<Home />}
+            ></Route>
+            <Route
+              path="/login"
+              element={<Login />}
+            ></Route>
+            <Route
+              path="/"
+              element={<Navigate replace to="/login" />}
+            ></Route>
+          </Routes>
         </BrowserRouter>
     </AppProvider>
   );
 }
-
-export default App;

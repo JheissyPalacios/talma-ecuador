@@ -91,6 +91,7 @@ def enviar_correo(destinatario, asunto, cuerpo):
     # Envía el correo electrónico
     servidor.sendmail(remitente, destinatario, mensaje.as_string())
     print("Se envió el correo electrónico")
+    print(destinatario)
     # Cierra la conexión SMTP
     servidor.quit()
 
@@ -120,7 +121,8 @@ async def crear_consulta(
     sinluz: int = Form(...),
     rest_time_hours: int = Form(...),
     objective: str = Form(...),
-    idDB: str = Form(...)
+    idDB: str = Form(...),
+    username: str = Form(...)
  ):
     try:
         now = datetime.now()
@@ -156,8 +158,7 @@ async def crear_consulta(
                         last_shifts = last_shifts,
                         objective = objective)
         
-
-        roster = {key: ''.join(value[i]['stint'] for i in range(num_weeks)) for key, value in sol.items()}
+        roster = {key: [value[i]['stint'][j] for i in range(int(num_weeks)) for j in range(5)] for key, value in sol.items()}
         roster = {key : ' '.join(value) for key, value in roster.items()}
         with open("filesDB/" + str(ts) + "/Roster.csv", 'w') as f:
             for key in roster.keys():
@@ -177,7 +178,8 @@ async def crear_consulta(
         datosDeConfirmación = {"state": 1, "dateFinish": fecha_formateada, "roster": url_del_archivo}
         actualizar_documento(idDB, datosDeConfirmación)
        # Uso del ejemplo
-        destinatario = 'daniel.baquero@talma.com.ec'
+       # destinatario = 'daniel.baquero@talma.com.ec'
+        destinatario = username
         asunto = 'Asunto del correo'
         cuerpo = view_documento(idDB)
 

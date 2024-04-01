@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import InactividadManager from "./InactividadManager";
 
 const AppContext = createContext();
@@ -29,7 +29,7 @@ export function AppProvider({ children }) {
     if (!storedUser) {
       // Si no hay usuario en localStorage, cerrar sesión
       logout();
-      <Redirect to="/login" />;
+      <Navigate to="/login" />;
     }
   }, []);
 

@@ -4,7 +4,7 @@ import logo from "../images/logo-talma.png";
 import "../style/Header.scss";
 import CreateRequest from "./CreateRequest";
 import Requests from "./Requests";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function Home() {
   const [isVisibleSolicitudes, setIsVisibleSolicitudes] = useState(true);
@@ -28,7 +28,7 @@ export default function Home() {
 
   // Redirigir al usuario a /login si no está autenticado
   if (!isLoggedIn) {
-    return <Redirect to="/login" />;
+    return <Navigate to="/login" />;
   }
 
   const toggleVisibilitySolicitudes = (e) => {

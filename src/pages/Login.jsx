@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useUser } from "../AppProvider";
 import usuariosData from "../users.json";
 import "../style/Login.scss";
@@ -33,7 +33,7 @@ export default function Login() {
   };
 
   if (loggedIn) {
-    return  <Redirect to="/home" />;
+    return  <Navigate to="/home" />;
   }
   return (
     <div className="login-page">
