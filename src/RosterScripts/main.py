@@ -14,7 +14,7 @@ from email.mime.multipart import MIMEMultipart
 
 def enviar_correo(destinatario, asunto, cuerpo):
     # Configura los detalles del remitente y del servidor SMTP
-    remitente = 'ingpalaciosmarchan@gmail.com'
+    remitente = 'rostering.talmaec@gmail.com'
     servidor_smtp = 'smtp.gmail.com'
     puerto_smtp = 587
 
@@ -22,7 +22,7 @@ def enviar_correo(destinatario, asunto, cuerpo):
     mensaje = MIMEMultipart()
     mensaje['From'] = remitente
     mensaje['To'] = destinatario
-    mensaje['Subject'] = asunto
+    mensaje['Subject'] = 'Resultados Rostering -' + cuerpo['name_consult']
 
     # Cuerpo del mensaje en HTML
     html = """
@@ -86,7 +86,7 @@ def enviar_correo(destinatario, asunto, cuerpo):
     servidor.starttls()
 
     # Inicia sesión en la cuenta del remitente
-    servidor.login(remitente, "comp kbyb edhh usjn")
+    servidor.login(remitente, "ehqw ktnr oguy dwft")
 
     # Envía el correo electrónico
     servidor.sendmail(remitente, destinatario, mensaje.as_string())

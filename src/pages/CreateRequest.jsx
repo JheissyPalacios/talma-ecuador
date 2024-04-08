@@ -554,7 +554,7 @@ export default function CreateRequest() {
       
       try {
         const response = await fetch(
-          `http://localhost:8000/crear_consulta`,
+          `http://192.168.150.114:8000/crear_consulta`,
           {
             method: "POST",
             body: formData,
